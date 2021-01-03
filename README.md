@@ -3,3 +3,7 @@
 
 # inventory-ms
 Inventory Management System
+
+
+# usefull commands
+php artisan migrate --path=database/migrations/2021_01_03_193426_create_accout_table.php
