@@ -14,6 +14,12 @@ use App\Http\Controllers\AccountController;
 |
 */
 
+Route::get('/joined', function () {
+    
+
+
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,3 +27,17 @@ Route::get('/', function () {
 Route::resource('products','ProductController');
 
 Route::get('/account/deposit', [AccountController::class, 'deposit']);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Auth::routes();
+  
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
+Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');
+
+
+Route::get('/categories', 'CategoryController@index');
+Route::get('/products', 'CategoryController@products');
