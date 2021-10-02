@@ -1,4 +1,4 @@
-@extends('products.layout')
+@extends('categories.layout')
  
 @section('content')
 
@@ -13,10 +13,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>All Products</h2>
+                <h2>All Categories</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('categories.create') }}"> Create New Category</a>
             </div>
         </div>
     </div>
@@ -31,20 +31,18 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Details</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($products as $product)
+        @foreach ($categories as $category)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $product->name }}</td>
-            <td>{{ $product->detail }}</td>
+            <td>{{ $category->name }}</td>
             <td>
-                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+                <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('categories.show',$category->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('categories.edit',$category->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
@@ -56,6 +54,6 @@
         @endforeach
     </table>
   
-    {!! $products->links() !!}
+    {!! $categories->links() !!}
       
 @endsection
