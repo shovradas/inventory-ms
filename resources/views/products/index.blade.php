@@ -1,6 +1,15 @@
 @extends('products.layout')
  
 @section('content')
+
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url('/home') }}">
+            Home
+        </a>
+    </div>
+</nav>
+
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">

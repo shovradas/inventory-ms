@@ -25,6 +25,7 @@ Route::get('/', function () {
 });
 
 Route::resource('products','ProductController');
+Route::resource('categories','CategoryController');
 
 Route::get('/account/deposit', [AccountController::class, 'deposit']);
 Auth::routes();
@@ -39,5 +40,6 @@ Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
 Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');
 
 
-Route::get('/categories', 'CategoryController@index');
-Route::get('/products', 'CategoryController@products');
+// Route::get('/categories', 'CategoryController@index');
+// Route::get('/products/index', 'ProductController@index');
+// Route::get('/products/create', 'ProductController@create');
